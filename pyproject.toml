@@ -5,6 +5,7 @@ description = "Project for media analysis"
 authors = ["KyrBl"]
 packages = [
   { include = "src" },
+  { include = "utils", from = "src" }
 ]
 
 [tool.poetry.dependencies]
