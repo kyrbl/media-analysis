@@ -11,6 +11,7 @@ packages = [
 [tool.poetry.dependencies]
 python = "^3.9"
 requests = "^2.29.0"
+xmltodict = "^0.13.0"
 
 [tool.poetry.group.dev.dependencies]
 black = "22.3.0"

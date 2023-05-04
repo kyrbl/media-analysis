@@ -1,4 +1,3 @@
-http://economictimes.indiatimes.com/tech/software/rssfeeds/13357555.cms
 http://nypost.com/tech/feed/
 http://www.smh.com.au/rssheadlines/technology-news/article/rss.xml
 http://zeenews.india.com/rss/science-technology-news.xml
@@ -9,10 +8,7 @@ https://feeds.skynews.com/feeds/rss/technology.xml
 http://www.innertemplelibrary.com/category/secure-hospitals/feed/
 http://e-news.com.ua/export/news.xml
 http://fakty.ua/rss_feed/science
-https://grnt.media/feed/
-https://nv.ua/ukr/rss/all.xml
 https://www.radiosvoboda.org/api/zrqiteuuir
-https://hromadske.ua/feed
 https://bihus.info/feed/
 https://zaxid.net/rss/all.xml
 https://www.ukrinform.net/rss/block-lastnews
@@ -21,5 +17,4 @@ https://euromaidanpress.com/feed/
 https://www.independent.co.uk/topic/ukraine/rss
 https://www.unn.com.ua/rss/news_uk.xml
 https://www.nytimes.com/svc/collections/v1/publish/https://www.nytimes.com/topic/destination/ukraine/rss.xml
-https://www.pravda.com.ua/rss/
 https://rss.unian.net/site/news_ukr.rss
