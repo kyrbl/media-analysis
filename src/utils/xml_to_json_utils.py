@@ -1,8 +1,6 @@
 import datetime
-import re
-import xmltodict
-import json
 import os
+import re
 
 
 def convert_xml_to_json(in_file, out_file):
