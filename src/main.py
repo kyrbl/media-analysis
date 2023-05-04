@@ -10,7 +10,9 @@ WEBSITE_LIST_FILE = f'{MAIN_DIRECTORY}/sites_rss_list.txt'
 DOWNLOAD_INTERVAL = 3600  # Download every hour
 
 # Define the name of the output file for the merged RSS feeds
-OUTPUT_FILE = f'{MAIN_DIRECTORY}/merged_rss_feeds.pickle'
+OUTPUT_FILE = f'{MAIN_DIRECTORY}/merged_rss_feeds.xml'
 
-while True:
-    download_and_merge_feeds(WEBSITE_LIST_FILE, OUTPUT_FILE, DOWNLOAD_INTERVAL)
+if __name__ == "__main__":
+    print(f"Starting to download rss feeds with an interval of {DOWNLOAD_INTERVAL} seconds")
+    while True:
+        download_and_merge_feeds(WEBSITE_LIST_FILE, OUTPUT_FILE, DOWNLOAD_INTERVAL)

@@ -1,5 +1,5 @@
 http://economictimes.indiatimes.com/tech/software/rssfeeds/13357555.cms
-http://nypost.com/tech/feed
+http://nypost.com/tech/feed/
 http://www.smh.com.au/rssheadlines/technology-news/article/rss.xml
 http://zeenews.india.com/rss/science-technology-news.xml
 http://www.washingtontimes.com/rss/headlines/culture/technology/

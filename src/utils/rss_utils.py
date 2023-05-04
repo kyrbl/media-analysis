@@ -1,35 +1,26 @@
-import feedparser
 import time
-import pickle
+
+import requests
 
 
 def download_and_merge_feeds(website_list_file, output_file, download_interval):
     # Open the file containing the list of websites
+    print(f"Reading list of websites from file: {website_list_file}\n---------------------")
     with open(website_list_file, 'r') as f:
         # Read the list of websites
         websites = f.readlines()
-
-    # Create an empty list to hold all the entries from all the feeds
-    all_entries = []
-
+    print("iterating over websites\n---------------------")
     # Loop through each website in the list
     for website in websites:
         # Remove any trailing whitespace from the website URL
         website = website.strip()
+        print(f"Downloading rss feed from website {website}\n")
 
         # Download the RSS feed from the website
-        feed = feedparser.parse(website)
+        response = requests.get(website)
 
-        # Add each entry from the feed to the list of all entries
-        all_entries.extend(feed.entries)
-
-    # Create a new RSS feed containing all the entries
-    merged_feed = feedparser.FeedParserDict()
-    merged_feed.entries = all_entries
-
-    # Write the merged RSS feed to a file
-    with open(output_file, 'wb') as file:
-        pickle.dump(merged_feed, file)
+        with open(output_file, 'ab') as file:
+            file.write(response.content)
 
     # Wait for the specified interval before downloading the next set of RSS feeds
     time.sleep(download_interval)
