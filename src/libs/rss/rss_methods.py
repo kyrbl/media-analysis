@@ -1,13 +1,12 @@
 import json
 import os
 import re
-import time
 
 import requests
 from bs4 import BeautifulSoup
 
 
-def download_feeds(website_list_file, output_folder, download_interval):
+def download_feeds(website_list_file, output_folder):
     # Open the file containing the list of websites
     print(f"Reading list of websites from file: {website_list_file}\n---------------------")
     with open(website_list_file, 'r') as f:
@@ -29,9 +28,6 @@ def download_feeds(website_list_file, output_folder, download_interval):
 
         # Download the RSS feed from the website
         download_and_save_as_json(website, output_file)
-
-    # Wait for the specified interval before downloading the next set of RSS feeds
-    time.sleep(download_interval)
 
 
 def download_and_save_as_json(url, output_file):

@@ -1,25 +1,23 @@
-from elasticsearch import Elasticsearch
+import time
+from threading import Thread
+from misc import *
 
-from utils import download_feeds, load_to_elastic
-from os.path import dirname
+from libs import download_feeds, load_to_elastic
+from apis import *
 
-DATA_DIR = f"{dirname(dirname(__file__))}\\data"
 
-WEBSITE_LIST_FILE = f'{DATA_DIR}\\sites_rss_list.txt'
-XML_OUTPUT_FOLDER = f'{DATA_DIR}\\xmls'
-JSON_OUTPUT_FOLDER = f'{DATA_DIR}\\jsons'
+def update_feeds():
+    while True:
+        es.delete_by_query(index=ELASTIC_INDEX, body={"query": {"match_all": {}}})
+        print(f"Starting to download rss feeds with an interval of {DOWNLOAD_INTERVAL} seconds")
+        download_feeds(WEBSITE_LIST_FILE, JSON_OUTPUT_FOLDER)
+        print("Loading jsons to Elastic.")
+        load_to_elastic(es, JSON_OUTPUT_FOLDER, ELASTIC_INDEX)
+        print("Successfully loaded.")
+        time.sleep(DOWNLOAD_INTERVAL)
 
-# Define the interval between RSS feed downloads (in seconds)
-DOWNLOAD_INTERVAL = 3600
 
 if __name__ == "__main__":
-    client = Elasticsearch(
-        "http://localhost:9200",
-    )
-
-    while True:
-        print(f"Starting to download rss feeds with an interval of {DOWNLOAD_INTERVAL} seconds")
-        download_feeds(WEBSITE_LIST_FILE, JSON_OUTPUT_FOLDER, DOWNLOAD_INTERVAL)
-        print("Loading jsons to Elastic.")
-        load_to_elastic(client, JSON_OUTPUT_FOLDER)
-        print("Successfully loaded.")
+    app_thread = Thread(target=app.run)
+    app_thread.start()
+    update_feeds()
