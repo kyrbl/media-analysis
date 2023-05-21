@@ -433,6 +433,18 @@ files = [
 ]
 
 [[package]]
+name = "pytz"
+version = "2023.3"
+description = "World timezone definitions, modern and historical"
+category = "main"
+optional = false
+python-versions = "*"
+files = [
+    {file = "pytz-2023.3-py2.py3-none-any.whl", hash = "sha256:a151b3abb88eda1d4e34a9814df37de2a80e301e68ba0fd856fb9b46bfbbbffb"},
+    {file = "pytz-2023.3.tar.gz", hash = "sha256:1d8ce29db189191fb55338ee6d0387d82ab59f3d00eac103412d64e0ebd0c588"},
+]
+
+[[package]]
 name = "requests"
 version = "2.29.0"
 description = "Python HTTP for Humans."
@@ -520,4 +532,4 @@ testing = ["big-O", "flake8 (<5)", "jaraco.functools", "jaraco.itertools", "more
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.9"
-content-hash = "1f56cc31f93197721c9bad1a17285f60f3130755871fe512eeab8d549224d2f0"
+content-hash = "1726eec2361341681a3ba27ec4591f85105ae375ced35f84fdf18feb32fef2cf"

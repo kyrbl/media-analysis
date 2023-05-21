@@ -1,1 +1,2 @@
-from .rss import download_feeds, load_to_elastic, connect_to_elastic
+from .elastic_methods import connect_to_elastic
+from .rss_methods import read_feeds_and_load_to_elastic
